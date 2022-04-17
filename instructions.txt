@@ -1,0 +1,6 @@
+If react-scripts is present in package.json, then just type this command
+
+npm install
+If react-scripts is not present in package.json, then you probably haven't installed it. To do that, run:
+
+npm install react-scripts --save
