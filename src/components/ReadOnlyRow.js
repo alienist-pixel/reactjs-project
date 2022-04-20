@@ -1,14 +1,15 @@
 import React,{ Fragment, useState } from "react";
+import "../styles/main.css"
 
 const ReadOnlyRow = ({ contact, handleEditClick, handleDeleteClick }) => {
   
   const [isVisible, setIsVisible] = useState(false);
  
   return (
-    <Fragment>
-    <tr>
-      <td>
-        <button
+    <div class="row">
+        <div class="col-sm-8">{contact.fullName}  {contact.email}
+        </div>
+        <div class="col-sm-4"><button
           type="button"
           onClick={(event) => handleEditClick(event, contact)}
         >
@@ -18,21 +19,12 @@ const ReadOnlyRow = ({ contact, handleEditClick, handleDeleteClick }) => {
           Delete
         </button>
         <button type="button" onClick={()=>setIsVisible(!isVisible)}>details</button>
-      </td>
-
-      <td>{contact.fullName}</td>
-      <td>{contact.address}</td>
-      <td>{contact.phoneNumber}</td>
-      <td>{contact.email}</td>
-      
-    </tr>
+        </div>
     {isVisible?
     <tr>
-         <p>Hiiiiiii</p>
+         <p>Phone Number: {contact.phoneNumber}</p>
     </tr>:null}
-    </Fragment>
-    
-    
+    </div>
   );
 };
 
